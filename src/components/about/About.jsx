@@ -24,7 +24,7 @@ const AboutSection = () => {
             {/* Right Column - Content */}
             <div>
               <h2 className="text-3xl font-bold text-[#001F3F] mb-6">
-                <span className="text-[#D4AF37]"> <br /> The Voice</span> Behind
+                <span className="text-[#001F3F]"> <br /> The Voice  Behind</span>
                 <span className="text-[#059669]">"The Courage to Grow™"</span>
               </h2>
               

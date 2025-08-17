@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const closeMobileMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-md backdrop-blur-sm bg-opacity-90" style={{ fontFamily: 'Cambria, serif' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,12 +17,13 @@ const Navbar = () => {
             <Link
               to="/" 
               className="flex items-center group"
+              onClick={closeMobileMenu}
             >
               <span className="text-[#001F3F] text-2xl font-bold tracking-tight">
                 <span className="group-hover:text-[#D4AF37] transition-colors">E</span>
                 <span className="text-[#D4AF37] group-hover:text-[#001F3F] transition-colors">N</span>
               </span>
-              <span className="ml-2 text-[#001F3F] text-sm font-light italic  sm:inline-block border-l border-[#D4AF37] pl-2">
+              <span className="ml-2 text-[#001F3F] text-sm font-light italic hidden sm:inline-block border-l border-[#D4AF37] pl-2">
                 Your Growth Partner
               </span>
             </Link>
@@ -94,41 +99,47 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <div className={`${isOpen ? 'block' : 'hidden'} md:hidden  bg-opacity-95`}>
+      <div className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-[#FFF0F3] bg-opacity-95`}>
         <div className="px-2 pt-2 pb-4 space-y-1 sm:px-3">
           <Link
             to="/"
             className="block px-3 py-3 rounded-md text-base font-medium text-[#001F3F] hover:text-[#D4AF37] hover:bg-white bg-opacity-50 transition-colors"
+            onClick={closeMobileMenu}
           >
             Home
           </Link>
           <Link
             to="/about"
             className="block px-3 py-3 rounded-md text-base font-medium text-[#001F3F] hover:text-[#D4AF37] hover:bg-white bg-opacity-50 transition-colors"
+            onClick={closeMobileMenu}
           >
             About
           </Link>
           <Link
             to="/coaching"
             className="block px-3 py-3 rounded-md text-base font-medium text-[#001F3F] hover:text-[#D4AF37] hover:bg-white bg-opacity-50 transition-colors"
+            onClick={closeMobileMenu}
           >
             Coaching
           </Link>
           <Link
             to="/shop"
             className="block px-3 py-3 rounded-md text-base font-medium text-[#001F3F] hover:text-[#D4AF37] hover:bg-white bg-opacity-50 transition-colors"
+            onClick={closeMobileMenu}
           >
             Shop
           </Link>
           <Link
             to="/contact"
             className="block px-3 py-3 rounded-md text-base font-medium text-[#001F3F] hover:text-[#D4AF37] hover:bg-white bg-opacity-50 transition-colors"
+            onClick={closeMobileMenu}
           >
             Contact
           </Link>
           <Link
             to="/shop"
             className="block mx-3 px-3 py-3 rounded-md text-base font-medium text-center text-white bg-gradient-to-r from-[#D4AF37] to-[#059669] hover:from-[#059669] hover:to-[#D4AF37] transition-all duration-300 shadow-md"
+            onClick={closeMobileMenu}
           >
             Get Started
           </Link>
